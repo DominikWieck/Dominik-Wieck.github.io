@@ -1,0 +1,171 @@
+body {
+background-image:url(./images/bg.png);
+width: 800px;
+margin: auto;
+font-family:sans-serif;
+   
+    color: maroon;
+    text-transform: uppercase;
+
+}
+.center {
+
+    display: block; 
+    width: 800px;    
+ 
+    margin-left: auto;
+    margin-right: auto
+}
+
+h4,h3,h6 {
+
+    font-family:sans-serif;
+    font-size: 18px;
+    text-indent: 375px;
+    color: maroon;
+    text-transform: uppercase;
+    
+}
+
+ul {
+    font-family: sans-serif;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: fixed;
+    background-color: black;
+
+
+    
+
+    border-radius: 15px;
+    background: black;
+    padding: 16px;
+    width: 230px;
+    height: 6px;
+    top: 0px;
+    right: 300px;
+    
+    
+    
+   
+   
+}
+
+li { float: left;
+    color:white
+}
+
+li a {
+
+    display: ;
+    color: white;
+    text-align: center;
+    padding: 14px px;
+    text-decoration: none;
+    text-indent: 500px;
+   
+
+}
+
+}
+
+.active {
+
+background-color: darkorange;
+}
+
+.fa {
+
+    top: 0px;
+    right: 0px
+}
+
+form {
+margin:0 auto;
+width: 400 px;
+padding: 1em;
+}
+
+form div + div {
+    margin-top: 1em
+}
+
+
+label {
+
+    display: inline-block;
+    width: 90px;
+    text-align: right
+}
+
+input {
+
+    font-family: 1em sans-serif;
+    width: 300px;
+    box-sizing: border-box;
+    background-color: lightgrey;
+
+}
+
+textarea {
+
+    vertical-align: top;
+    height: 5em;
+    font-family: sans-serif;
+    width: 300px;
+    box-sizing: border-box;
+    background-color: lightgrey;
+}
+
+.button{
+
+
+    margin-left: 5.75em
+}
+
+p {
+    font-family:sans-serif;
+    color: maroon;
+    text-transform: uppercase;
+    margin-left: 5.75em  ;
+    width:800px
+
+}
+
+h6 {
+
+    font-family:sans-serif;
+    color: maroon;
+    text-transform: uppercase;
+    
+    
+}
+
+.fb {
+    position: relative;
+    display: block;
+    right: -500px;
+    top: -175px;
+
+    
+
+}
+
+.Pic:hover{
+
+  width: 50px;
+  height: 50px
+
+}
+
+.rot{
+    color: #be3c14;
+}
+
+li a:hover{
+
+    color: yellowgreen;
+}
+
+p ;}
