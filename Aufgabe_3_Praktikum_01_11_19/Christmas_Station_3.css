@@ -1,0 +1,73 @@
+body{
+
+    text-align:center;
+    background-image:url(./Station_3_Hover/images/bg.png)
+}
+
+#wrapperinio {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+h1 {
+
+    position: absolute;
+    top: 22%;
+    left: 37%;
+    color: white;
+}
+.bg{
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+.Star1{ 
+    position: absolute;
+    left: 37%;
+    bottom: 35%;
+}
+
+.Star1:hover{
+
+background-image: url(./Station_3_Hover/images/stern_hover.png);
+}
+
+.Star2{
+
+    position: absolute;
+    left: 41%;
+    bottom: 50%;
+}
+
+.Star2:hover{
+    background-image: url(./Station_3_Hover/images/stern_hover.png);
+
+}
+
+.Star3{
+
+    position: absolute;
+    left:49%;
+    bottom: 35%;
+}
+
+
+    .Star3:hover{
+        background-image: url(./Station_3_Hover/images/stern_hover.png);
+    
+    }
+
+
+    .Star4{
+
+        position: absolute;
+        left: 55%;
+        bottom: 50%;}
+
+        .Star4:hover{
+            background-image: url(./Station_3_Hover/images/stern_hover.png);
+        
+        }

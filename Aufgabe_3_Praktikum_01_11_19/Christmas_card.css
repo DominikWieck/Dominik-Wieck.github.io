@@ -1,0 +1,59 @@
+body{
+
+    background-image:url(./Station_2_Background_Images/3042877.jpg);
+    text-align: center;
+}
+
+nav{
+    position: absolute;
+    width: 100%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ul{
+
+    list-style-type: none;
+}
+
+li {
+    float: left;
+    margin-left: 3%;
+}
+
+li a{
+
+    border: ;
+}
+
+a{
+
+    display: block;
+    padding: 20px 40px;
+    text-decoration: none;
+    color: white;
+    background-color:red ;
+        border: 3px outset black;
+    font-family: sans-serif
+}
+
+a:hover{
+
+color: yellowgreen;
+}
+h1{ 
+
+    position: absolute;
+    top: 25%;
+    left: 45%;
+    color: white;
+    font-family: schrift;
+}
+
+@font-face{
+font-family: schrift;
+src: url(./Station_4_Fonts/fonts/Jellyka\ Delicious\ Cake.ttf);
+
+}
+

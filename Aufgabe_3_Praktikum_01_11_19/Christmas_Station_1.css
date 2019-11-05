@@ -1,0 +1,48 @@
+
+body{
+    background-image:url(./Station_1_Positionierung/images/bg.png)
+}
+
+
+
+
+.penguin{
+    position: absolute;
+    left: 60%;
+    bottom: 30%;
+}
+
+.busch{
+    position: absolute;
+    left: 28%  ;
+    bottom: 68%;
+
+}
+.wrapper1{
+    margin-top: 7%;
+    margin-left: 30%;
+}
+
+h1{
+
+    position: absolute;
+    text-align: left;
+    font-family: sans-serif;
+    font-size: 2em;
+    color: white;
+    top: 18%;
+    left: 40%;
+}  
+
+
+p{
+
+    position: absolute;
+    top: 40%;
+    left: 33%;
+    text-align: left;
+    font-family: sans-serif;
+    color: white;
+    font-size: 1em;
+    line-height: 2em;
+}

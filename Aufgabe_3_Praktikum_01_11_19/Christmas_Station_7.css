@@ -1,0 +1,65 @@
+body{
+    background-image:url(./Station_7_Videos/images/bg.png);
+text-align: center
+}
+
+#wrapper {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.gifts{
+
+    position: absolute;
+    bottom: 20%;
+    right: 30%;
+    z-index: 1  ;
+}
+
+.plant{
+
+    position: absolute;
+    top: 13%;
+    left: 28%;
+
+}
+
+.Star1{
+
+    position: absolute;
+    top: 20%;
+    left: 17%;
+}
+
+.Star2{
+
+    position: absolute;
+    top: 45%;
+    left: 25%;
+}
+
+video{
+
+    position: absolute;
+    bottom: 25%;
+    right: 32%;
+}
+
+h1{
+
+    position: absolute;
+    color: white;
+    top: 33%;
+    left: 32%;
+}
+
+p{
+    position: absolute;
+    top: 44%;
+    left: 32%;
+    font-size: medium;
+    color: white;;
+}
+}
