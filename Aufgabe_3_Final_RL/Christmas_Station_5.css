@@ -1,0 +1,36 @@
+body{
+    background-image: url(./Station_4_Fonts/images/bg.png);
+    text-align: center;
+    
+}
+
+#wrapper{position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.hey{
+    font-family: "schrift";
+    position: absolute;
+    top: 1%;
+    right: 20%;
+font-size: 60pt;
+
+}
+
+.king{
+    font-family: "schrift";
+    position: absolute;
+    top: 40%;
+    right: 18%;
+    font-size: 15pt;
+    left: ;
+    color: white;
+}
+
+@font-face{
+
+    font-family: schrift;
+        src: url(./Station_4_Fonts/fonts/Jellyka\ Delicious\ Cake.ttf );
+}

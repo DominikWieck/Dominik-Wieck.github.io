@@ -1,0 +1,30 @@
+
+body{
+
+    background-image: url(./Station_8_Youtube/images/bg.png);
+    text-align: center;
+}
+
+#wrapperinio {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+iframe{
+
+    position: absolute;
+    width: 90%;
+    height: 80%;
+    top: 10%;
+    left: 5%;
+}
+
+.role{
+
+    position: absolute;
+    top: 65%;;
+    left: 60%;;
+}
