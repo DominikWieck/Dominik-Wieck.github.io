@@ -1,0 +1,51 @@
+body{
+
+
+    background-image: url(./images/bg.jpg);
+    background-size: cover;
+}
+h1{
+position: absolute;
+top: 24%;
+left: 18%;
+font-family: serif;
+color: blanchedalmond;
+}
+div {
+
+    position: relative;
+    margin: auto;
+    top: 50%;
+    width: 640px;
+    height: 480px;
+}
+
+iframe{
+    position: absolute;
+    left: 33%;
+
+    top: 20%;
+}
+
+p {
+    position: absolute;
+    left: 28%;
+    top: 80%;
+}
+
+.workpls {
+
+    position: absolute;
+    top: 92%;
+    left: 37%;
+    color: blanchedalmond;
+    background-color:darkblue;
+    border:3px outset white
+    text align: center;
+    padding: 20px;
+}
+
+a:hover{
+
+    color: darkcyan;
+}
