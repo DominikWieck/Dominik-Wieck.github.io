@@ -1,0 +1,122 @@
+body {background-image: url(./images/cropped-1920-1080-780131.jpg);}
+
+
+
+#Center {
+    margin-left:auto;
+    margin-right:auto;
+    translate: (-50%, -50%);
+}
+
+
+
+#button1{
+
+    position:absolute;
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+    border-radius: 8px;
+    left: 35%;
+    top: 20%;
+
+    
+}
+
+#button:hover{
+
+    opacity: .4;
+}
+
+#button2{
+
+    position:absolute;
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+    border-radius: 8px;
+    left: 45%;
+    top: 20%;
+
+    
+}
+
+#button3{
+
+    position:absolute;
+    width: 150px;
+    height: 150px;
+    background-color: blue;
+    border-radius: 8px;
+    left: 55%;
+    top: 20%;
+    
+}
+
+
+
+
+#button4{
+    position:absolute;
+    width: 150px;
+    height: 150px;
+    background-color: purple;
+    border-radius: 8px;
+    left: 35%;
+    top: 41%;
+}
+
+
+#button5{
+    position:absolute;
+    width: 150px;
+    height: 150px;
+    background-color: purple;
+    border-radius: 8px;
+    left: 45%;
+    top: 41%;
+}
+
+#button6{
+    position:absolute;
+    width: 150px;
+    height: 150px;
+    background-color: purple;
+    border-radius: 8px;
+    left: 55%;
+    top: 41%;
+}
+
+#button7{
+    position:absolute;
+    width: 150px;
+    height: 150px;
+    background-color: purple;
+    border-radius: 8px;
+    left: 35%;
+    top: 62%;
+}
+
+#button8{
+    position:absolute;
+    width: 150px;
+    height: 150px;
+    background-color:orange;
+    border-radius: 8px;
+    left: 45%;
+    top: 62%;
+
+}
+
+#button9{
+    position:absolute;
+    width: 150px;
+    height: 150px;
+    background-color:orange;
+    border-radius: 8px;
+    left: 55%;
+    top: 62%;
+
+}
+
+
