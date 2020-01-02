@@ -1,4 +1,4 @@
-var myBeat = ["kick.mp3", "kick.mp3", "kick.mp3", "snare.mp3", "hihat.mp3", "hihat.mp3", "kick.mp3", "hihat.mp3", "snare.mp3", "not_even_close.mp3"];
+var myBeat = ["kick.mp3", "kick.mp3", "snare.mp3", "hihat.mp3"];
 var aufnahme = false;
 window.addEventListener("load", function () {
     document.querySelector("#button1").addEventListener("mousedown", function () { playSample("kick.mp3"); });
@@ -26,14 +26,18 @@ function playSample(myMelody) {
 var tempo;
 var index = 0;
 function playBeatz() {
-    var meinButton = document.querySelector("#play");
-    if (meinButton.className == "fas fa-play") {
-        meinButton.className = "fas fa-stop";
+    //Button Play
+    if (document.getElementById("play").classList.contains("fa-play")) {
+        document.getElementById("play").classList.remove("fa-play");
+        document.getElementById("play").classList.add("fa-pause");
         tempo = setInterval(beot, 300);
         aufnahme = false;
     }
+    //Button Stop
     else {
-        meinButton.className = "fas fa-play";
+        document.getElementById("play").classList.remove("fa-pause");
+        document.getElementById("play").classList.add("fa-play");
+        clearInterval(tempo);
     }
 }
 //Beotyoo
