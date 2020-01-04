@@ -187,3 +187,30 @@ body {background-image: url(./images/cropped-1920-1080-780131.jpg);}
 
 }
 
+#play {
+
+    width: 100px;
+    height: 100px;
+   background-color: orange;
+   position: absolute;
+   top: 17%;
+    
+}
+
+#micro {
+
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    position: absolute;
+    top: 30%;
+}
+
+#delete {
+
+    width: 100px;
+    height: 100px;
+    background-color: orange;
+    position: absolute;
+    top: 3.5%;
+}
