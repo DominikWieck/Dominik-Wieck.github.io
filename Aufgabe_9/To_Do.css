@@ -1,0 +1,18 @@
+body {
+  background-color: darkgrey;
+}
+
+
+.newtask {
+
+  width: 350px;
+  height: 35px;
+  color: black;
+  font-family: serif;
+  
+}
+
+.button {
+  position: absolute;
+  right: 85%;
+}
