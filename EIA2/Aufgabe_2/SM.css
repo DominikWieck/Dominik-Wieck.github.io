@@ -1,0 +1,66 @@
+body{
+
+    position: absolute;
+}
+
+h1 {
+    
+    text-align: center;
+}
+
+div#memory1{
+    
+    position: relative;
+    top: 30px;
+
+
+}
+
+div#memory2{
+    
+    position: relative;
+    top: 45px;
+
+
+}
+
+div#memory3{
+    
+    position: relative;
+    top: 70px;
+
+
+}
+
+div#Words{
+    
+    position: relative;
+    top: 90px;
+
+
+}
+
+button{
+
+        position: absolute;
+        left: 1000px;
+        top: 30px;
+}
+
+div#field{
+
+    position: absolute;
+    border: thin solid black;
+    text-align: center;
+    margin: 120px;
+    width: 1000px;
+    height: 500px;
+    left: 150px;
+}
+
+#Tipp{
+    position: absolute;
+    left: 650px;
+    bottom: -250px;
+    width: 250px;
+}
