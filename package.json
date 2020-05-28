@@ -1,0 +1,11 @@
+{
+  "name": "theusualyouknow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "start": "node EIA2_01_Yep/Aufgabe_05/Server/server.js"
+  },
+  "author": "Dominik Wieck",
+  "license": "ISC"
+}
