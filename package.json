@@ -1,0 +1,11 @@
+{
+  "name": "theusualyouknow",
+  "version": "1.0.0",
+  "description": "",
+  "main": "",
+  "scripts": {
+    "start": "node Aufgabe06/Server/server.js"
+  },
+  "author": "Dominik Wieck",
+  "license": "ISC"
+}
