@@ -8,7 +8,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "start":"node EIA2/EIA_Test/server.js"
+    "start":"node EIA2/EIA2_Endabgabe/server.js"
   },
   "repository": {
     "type": "git",
