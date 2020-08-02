@@ -2,7 +2,7 @@
   "name": "dominikwieck.github.io",
   "version": "1.0.0",
   "description": "Its nice",
-  "main": "index.js",
+  "main": "",
   "dependencies": {
     "mongodb": "^3.5.8"
   },
