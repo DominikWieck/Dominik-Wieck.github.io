@@ -1,0 +1,23 @@
+{
+  "name": "dominikwieck.github.io",
+  "version": "1.0.0",
+  "description": "Its nice",
+  "main": "index.js",
+  "dependencies": {
+    "mongodb": "^3.5.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start":"node EIA2/EIA_Test/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DominikWieck/dominikwieck.github.io.git"
+  },
+  "author": "Dominik Wieck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DominikWieck/dominikwieck.github.io/issues"
+  },
+  "homepage": "https://github.com/DominikWieck/dominikwieck.github.io#readme"
+}
