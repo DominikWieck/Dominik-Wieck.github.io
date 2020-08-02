@@ -1,0 +1,23 @@
+{
+  "name": "itsagottamagic",
+  "version": "1.0.0",
+  "description": "eia2 endabgabe",
+  "main": "",
+  "dependencies": {
+    "mongodb": "^3.5.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node EIA2/EIA2_Endabgabe/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DominikWieck/dominikwieck.github.io.git"
+  },
+  "author": "Dominik Wieck",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DominikWieck/dominikwieck.github.io/issues"
+  },
+  "homepage": "https://github.com/DominikWieck/dominikwieck.github.io#readme"
+}
