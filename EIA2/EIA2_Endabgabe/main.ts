@@ -41,7 +41,7 @@ namespace PaintIt {
     let clear: HTMLButtonElement;
     let del: HTMLButtonElement;
 
-    let url: string = "https://localhost:5500"
+    let url: string = "https://youareawizard.herokuapp.com/"
 
     async function handelLoad(_event: Event): Promise<void> {
 
@@ -251,7 +251,7 @@ namespace PaintIt {
             alert(responseText);
             else
                 alert("There is no picture to safe");
-        
+
         list = "";
 
     }

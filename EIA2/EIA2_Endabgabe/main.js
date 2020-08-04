@@ -26,7 +26,7 @@ var PaintIt;
     let restore;
     let clear;
     let del;
-    let url = "https://localhost:5500";
+    let url = "https://youareawizard.herokuapp.com/";
     async function handelLoad(_event) {
         //get context
         let canvas = document.querySelector("canvas");
