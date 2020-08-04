@@ -1,33 +1,31 @@
 "use strict";
-var Picture;
-(function (Picture) {
-    class Square extends Picture.Figure {
-        constructor(_position, _parameter, _rotation, _color, _size) {
-            super(_position, _parameter, _rotation);
-            this.color = _color;
-            this.size = _size;
+var PaintIt;
+(function (PaintIt) {
+    class Square extends PaintIt.Figure {
+        constructor(_type, _position, _velocity, _rotation, _color, _size) {
+            super(_type, _position, _velocity, _rotation, _color, _size);
         }
         draw() {
             if (this.rotation == 0)
-                Picture.crc2.translate(this.position.x, this.position.y);
-            Picture.crc2.beginPath();
-            Picture.crc2.moveTo(-25 * this.size, -25 * this.size);
-            Picture.crc2.lineTo(-25 * this.size, 25 * this.size);
-            Picture.crc2.lineTo(25 * this.size, 25 * this.size);
-            Picture.crc2.lineTo(25 * this.size, -25 * this.size);
-            Picture.crc2.lineTo(-25 * this.size, -25 * this.size);
-            Picture.crc2.scale(this.size, this.size);
-            Picture.crc2.fillStyle = this.color;
-            Picture.crc2.strokeStyle = this.color;
-            Picture.crc2.lineCap = "round";
-            Picture.crc2.lineWidth = 5;
-            Picture.crc2.lineJoin = "round";
-            Picture.crc2.fill();
-            Picture.crc2.stroke();
-            Picture.crc2.closePath();
-            Picture.crc2.resetTransform();
+                PaintIt.crc2.translate(this.position.x, this.position.y);
+            PaintIt.crc2.beginPath();
+            PaintIt.crc2.moveTo(-25 * this.size, -25 * this.size);
+            PaintIt.crc2.lineTo(-25 * this.size, 25 * this.size);
+            PaintIt.crc2.lineTo(25 * this.size, 25 * this.size);
+            PaintIt.crc2.lineTo(25 * this.size, -25 * this.size);
+            PaintIt.crc2.lineTo(-25 * this.size, -25 * this.size);
+            PaintIt.crc2.scale(this.size, this.size);
+            PaintIt.crc2.fillStyle = this.color;
+            PaintIt.crc2.strokeStyle = this.color;
+            PaintIt.crc2.lineCap = "round";
+            PaintIt.crc2.lineWidth = 5;
+            PaintIt.crc2.lineJoin = "round";
+            PaintIt.crc2.fill();
+            PaintIt.crc2.stroke();
+            PaintIt.crc2.closePath();
+            PaintIt.crc2.resetTransform();
         }
     }
-    Picture.Square = Square;
-})(Picture || (Picture = {}));
+    PaintIt.Square = Square;
+})(PaintIt || (PaintIt = {}));
 //# sourceMappingURL=square.js.map

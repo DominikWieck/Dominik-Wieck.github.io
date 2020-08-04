@@ -1,6 +1,6 @@
 "use strict";
-var Picture;
-(function (Picture) {
+var PaintIt;
+(function (PaintIt) {
     class Vector {
         constructor(_x, _y) {
             this.set(_x, _y);
@@ -29,6 +29,6 @@ var Picture;
             return new Vector(this.x, this.y);
         }
     }
-    Picture.Vector = Vector;
-})(Picture || (Picture = {}));
+    PaintIt.Vector = Vector;
+})(PaintIt || (PaintIt = {}));
 //# sourceMappingURL=vector.js.map

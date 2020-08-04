@@ -3,14 +3,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const Http = require("http");
 const Url = require("url");
 const Mongo = require("mongodb");
-var Picture;
-(function (Picture) {
+var PaintIt;
+(function (PaintIt) {
     let pictures;
     let allPictures = [];
     let port = process.env.PORT;
     if (port == undefined)
-        port = 5002;
-    let databaseUrl = "mongodb+srv://Testuser:halloichhabekeinelustmehr@eia2-e3syb.mongodb.net/<dbname>?retryWrites=true&w=majority";
+        port = 5500;
+    let databaseUrl = "mongodb+srv://Dominik:ichbincool@cluster0.v2ul2.mongodb.net/<dbname>?retryWrites=true&w=majority";
     //let destination: string = "";
     startServer(port /*destination*/);
     connectToDatabase(databaseUrl);
@@ -27,8 +27,8 @@ var Picture;
         let options = { useNewUrlParser: true, useUnifiedTopology: true };
         let mongoClient = new Mongo.MongoClient(_url, options);
         await mongoClient.connect();
-        pictures = mongoClient.db("PaintItYourSelf").collection("Pictures");
-        console.log("Database connetion", pictures != undefined);
+        pictures = mongoClient.db("itsagottamagic").collection("Figures_canvas");
+        console.log("Database connection", pictures != undefined);
     }
     async function handleRequest(_request, _response) {
         console.log("What's up?");
@@ -39,6 +39,7 @@ var Picture;
             if (_request.url.indexOf("factor") != -1) {
                 _response.write("Pictured saved. Thank you for painting.");
                 storeOrder(url.query);
+                console.log(url.query);
             }
             if (_request.url.indexOf("get") != -1) {
                 let cursor = await pictures.find();
@@ -58,5 +59,5 @@ var Picture;
             allPictures.push(key);
         }
     }
-})(Picture = exports.Picture || (exports.Picture = {}));
+})(PaintIt = exports.PaintIt || (exports.PaintIt = {}));
 //# sourceMappingURL=server.js.map

@@ -1,12 +1,10 @@
-namespace Picture {
+namespace PaintIt {
     export class Square extends Figure {
         color: string;
         size: number;
 
-        constructor(_position: Vector, _parameter: number, _rotation: number, _color: string, _size: number) {
-            super (_position, _parameter, _rotation);
-            this.color = _color;
-            this.size = _size;
+        constructor(_type: string, _position: Vector, _velocity: Vector, _rotation: number, _color: string, _size: number) {
+            super (_type, _position, _velocity, _rotation, _color, _size);
         }
 
         draw(): void {

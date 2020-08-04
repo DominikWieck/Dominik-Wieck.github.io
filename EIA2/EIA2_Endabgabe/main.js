@@ -1,8 +1,8 @@
 "use strict";
-var Picture;
-(function (Picture) {
-    window.addEventListener("load", handleLoad);
-    Picture.figures = [];
+var PaintIt;
+(function (PaintIt) {
+    window.addEventListener("load", handelLoad);
+    PaintIt.figures = [];
     let savedPictures = [];
     let figure;
     let list = "";
@@ -10,10 +10,10 @@ var Picture;
     let listPlace;
     let circle;
     let circlein;
-    let triangle;
-    let trianglein;
     let square;
     let squarein;
+    let triangle;
+    let trianglein;
     let v;
     let r;
     let c;
@@ -24,13 +24,15 @@ var Picture;
     let background;
     let save;
     let restore;
-    let url = "https://youareawizard.herokuapp.com/";
-    async function handleLoad(_event) {
+    let clear;
+    let del;
+    let url = "https://localhost:5500";
+    async function handelLoad(_event) {
         //get context
         let canvas = document.querySelector("canvas");
         if (!canvas)
             return;
-        Picture.crc2 = canvas.getContext("2d");
+        PaintIt.crc2 = canvas.getContext("2d");
         canvasTarget = document.querySelector("canvas");
         listPlace = document.querySelector("#pictures");
         circle = document.querySelector("#circle");
@@ -48,8 +50,10 @@ var Picture;
         bg = document.querySelector("#backgroundc");
         save = document.querySelector("#save");
         restore = document.querySelector("#restore");
+        clear = document.querySelector("#clear");
+        del = document.querySelector("#delete");
         //add Listeners
-        circle.addEventListener("click", selectCircle);
+        circle.addEventListener("click", selectCricle);
         triangle.addEventListener("click", selectTriangle);
         square.addEventListener("click", selectSquare);
         c.addEventListener("change", changeColor);
@@ -57,25 +61,33 @@ var Picture;
         sizey.addEventListener("change", adjustCanvas);
         canvasTarget.addEventListener("click", createFigure);
         save.addEventListener("click", savePicture);
-        restore.addEventListener("click", restorePicture);
+        restore.addEventListener("click", restoerPicture);
+        clear.addEventListener("click", clearCanvas);
+        del.addEventListener("click", delCanvas);
         window.setInterval(update, 20);
     }
     function update() {
         drawBackground();
-        for (let figure of Picture.figures) {
+        for (let figure of PaintIt.figures) {
             figure.rotate();
             figure.move(1);
             figure.draw();
         }
     }
+    function clearCanvas() {
+        PaintIt.figures.pop();
+    }
+    function delCanvas() {
+        PaintIt.figures = [];
+    }
     function drawBackground() {
         background = bg.value;
-        Picture.crc2.resetTransform();
-        Picture.crc2.fillStyle = background;
-        Picture.crc2.fillRect(0, 0, canvasTarget.width, canvasTarget.height);
+        PaintIt.crc2.resetTransform();
+        PaintIt.crc2.fillStyle = background;
+        PaintIt.crc2.fillRect(0, 0, canvasTarget.width, canvasTarget.height);
         //console.log(background);
     }
-    function selectCircle() {
+    function selectCricle() {
         let color = c?.value;
         figure = "circle";
         circle?.setAttribute("style", "background-color: lightblue");
@@ -120,26 +132,28 @@ var Picture;
         let x = sizex?.value;
         let y = sizey?.value;
         background = bg?.value;
-        canvasTarget?.setAttribute("width", "" + x);
-        canvasTarget?.setAttribute("height", "" + y);
+        canvasTarget.setAttribute("width", "" + x);
+        canvasTarget.setAttribute("height", "" + y);
     }
     function createFigure(_event) {
-        let position = new Picture.Vector(_event.clientX - Picture.crc2.canvas.offsetLeft, _event.clientY - Picture.crc2.canvas.offsetTop); // Mausposition wird genutzt 
-        let velocity = Number(v.value);
+        let position = new PaintIt.Vector(_event.clientX - PaintIt.crc2.canvas.offsetLeft, _event.clientY - PaintIt.crc2.canvas.offsetTop);
+        let velocity;
+        let parameter = Number(v.value);
         let rotation = Number(r.value);
         let color = c.value;
         let size = Number(s.value);
+        velocity = new PaintIt.Vector(parameter, parameter);
         if (figure == "circle") {
-            let circle = new Picture.Circle(position, velocity, rotation, color, size);
-            Picture.figures.push(circle);
+            let circle = new PaintIt.Circle(figure, position, velocity, rotation, color, size);
+            PaintIt.figures.push(circle);
         }
         else if (figure == "triangle") {
-            let trinangle = new Picture.Triangle(position, velocity, rotation, color, size);
-            Picture.figures.push(trinangle);
+            let trinangle = new PaintIt.Triangle(figure, position, velocity, rotation, color, size);
+            PaintIt.figures.push(trinangle);
         }
         else if (figure == "square") {
-            let square = new Picture.Square(position, velocity, rotation, color, size);
-            Picture.figures.push(square);
+            let square = new PaintIt.Square(figure, position, velocity, rotation, color, size);
+            PaintIt.figures.push(square);
         }
         else
             console.log("no figure selected");
@@ -152,7 +166,7 @@ var Picture;
         let dd = String(date.getDate()).padStart(2, "0");
         let mm = String(date.getMonth() + 1).padStart(2, "0");
         let yyyy = String(date.getFullYear());
-        date = hh + ":" + mimi + "; " + dd + "/" + mm + "/" + yyyy;
+        date = hh + ":" + mimi + " Uhr - " + dd + "/" + mm + "/" + yyyy;
         //console.log(date);
         let x = Number(sizex.value);
         if (x == 0)
@@ -161,17 +175,21 @@ var Picture;
         if (y == 0)
             y = 400;
         background = bg.value;
-        let infos = new Picture.PictureSave(date, Picture.figures, x, y, background);
+        let infos = new PaintIt.PictureSave(date, PaintIt.figures, x, y, background);
+        // let dbEntry: MongoDBPictureEntry = new MongoDBPictureEntry(infos);
         //Daten an Server schicken
         console.log("Send Picture");
         let pictures = JSON.stringify(infos);
         let query = new URLSearchParams(pictures);
         let response = await fetch(url + "?" + query.toString());
         let responseText = await response.text();
-        alert(responseText);
+        if (responseText)
+            alert(responseText);
+        else
+            alert("There is no picture to safe");
         list = "";
     }
-    async function restorePicture(_event) {
+    async function restoerPicture(_event) {
         if (list == "") {
             //Anfrage senden
             savedPictures.splice(0, savedPictures.length);
@@ -179,9 +197,15 @@ var Picture;
             let response = await fetch(url + "?get");
             let responseText = await response.text();
             responseText.slice(2, 40);
-            let pictureData = JSON.parse(responseText);
-            alert(pictureData);
-            savedPictures.push(pictureData);
+            let dbData = JSON.parse(responseText);
+            for (let index = 0; index < dbData.length; index++) {
+                if (index % 2 == 1) {
+                    console.log(dbData[index]);
+                    let pictureData = JSON.parse(dbData[index]);
+                    savedPictures.push(pictureData);
+                }
+            }
+            //alert(savedPictures);
             console.log(savedPictures);
             createList();
             list = "loaded";
@@ -193,20 +217,46 @@ var Picture;
             let picture = document.createElement("p");
             picture.setAttribute("id", "" + savedPictures[index].date);
             picture.addEventListener("click", loadPicture);
-            picture.innerHTML = "abc" + savedPictures[index].date;
+            picture.innerHTML = savedPictures[index].date;
             listPlace.appendChild(picture);
+            console.log(savedPictures[index].date);
         }
     }
     function loadPicture(_event) {
         console.log("loading picture");
+        PaintIt.figures = [];
         for (let index = 0; index < savedPictures.length; index++) {
             let id = _event.target.id;
-            if (id == savedPictures[index].bg) {
-                for (let index = 0; index < savedPictures.length; index++) {
-                    Picture.figures.push(savedPictures[index].figure[index]);
+            if (id == savedPictures[index].date) {
+                background = savedPictures[index].bg;
+                let x = savedPictures[index].sizex;
+                let y = savedPictures[index].sizey;
+                canvasTarget.setAttribute("width", "" + x);
+                canvasTarget.setAttribute("height", "" + y);
+                for (let i = 0; i < savedPictures[index].figure.length; i++) {
+                    let tempType = savedPictures[index].figure[i].type;
+                    let tempPosition = new PaintIt.Vector(savedPictures[index].figure[i].position.x, savedPictures[index].figure[i].position.y);
+                    let tempVelocity = new PaintIt.Vector(savedPictures[index].figure[i].velocity.x, savedPictures[index].figure[i].velocity.y);
+                    let tempRotation = savedPictures[index].figure[i].rotation;
+                    let tempColor = savedPictures[index].figure[i].color;
+                    let tempSize = savedPictures[index].figure[i].size;
+                    if (savedPictures[index].figure[i].type == "circle") {
+                        let circle = new PaintIt.Circle(tempType, tempPosition, tempVelocity, tempRotation, tempColor, tempSize);
+                        PaintIt.figures.push(circle);
+                    }
+                    else if (savedPictures[index].figure[i].type == "triangle") {
+                        let trinangle = new PaintIt.Triangle(figure, tempPosition, tempVelocity, tempRotation, tempColor, tempSize);
+                        PaintIt.figures.push(trinangle);
+                    }
+                    else if (savedPictures[index].figure[i].type == "square") {
+                        let square = new PaintIt.Square(figure, tempPosition, tempVelocity, tempRotation, tempColor, tempSize);
+                        PaintIt.figures.push(square);
+                    }
+                    else
+                        console.log("no figure selected");
                 }
             }
         }
     }
-})(Picture || (Picture = {}));
+})(PaintIt || (PaintIt = {}));
 //# sourceMappingURL=main.js.map

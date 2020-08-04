@@ -1,6 +1,6 @@
 "use strict";
-var Picture;
-(function (Picture) {
+var PaintIt;
+(function (PaintIt) {
     class PictureSave {
         constructor(_date, _figure, _sizex, _sizey, _bg) {
             this.date = _date;
@@ -10,6 +10,12 @@ var Picture;
             this.bg = _bg;
         }
     }
-    Picture.PictureSave = PictureSave;
-})(Picture || (Picture = {}));
+    PaintIt.PictureSave = PictureSave;
+    class MongoDBPictureEntry {
+        constructor(_data) {
+            this.data = _data;
+        }
+    }
+    PaintIt.MongoDBPictureEntry = MongoDBPictureEntry;
+})(PaintIt || (PaintIt = {}));
 //# sourceMappingURL=pictureSave.js.map

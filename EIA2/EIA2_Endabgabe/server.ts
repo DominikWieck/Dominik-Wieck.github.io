@@ -2,7 +2,7 @@ import * as Http from "http";
 import * as Url from "url";
 import * as Mongo from "mongodb";
 
-export namespace Picture {
+export namespace PaintIt {
 
     
 
@@ -11,9 +11,9 @@ export namespace Picture {
 
     let port: number | string | undefined  = process.env.PORT;
     if (port == undefined)
-        port = 5002;
+        port = 5500;
 
-    let databaseUrl: string = "mongodb+srv://Testuser:halloichhabekeinelustmehr@eia2-e3syb.mongodb.net/<dbname>?retryWrites=true&w=majority";
+    let databaseUrl: string = "mongodb+srv://Dominik:ichbincool@cluster0.v2ul2.mongodb.net/<dbname>?retryWrites=true&w=majority";
 
     //let destination: string = "";
 
@@ -36,8 +36,8 @@ export namespace Picture {
         let options: Mongo.MongoClientOptions = {useNewUrlParser: true, useUnifiedTopology: true};
         let mongoClient: Mongo.MongoClient = new Mongo.MongoClient(_url, options);
         await mongoClient.connect();
-        pictures = mongoClient.db("PaintItYourSelf").collection("Pictures");
-        console.log("Database connetion", pictures != undefined);
+        pictures = mongoClient.db("itsagottamagic").collection("Figures_canvas");
+        console.log("Database connection", pictures != undefined);
     }
 
     async function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): Promise<void> {
@@ -51,6 +51,7 @@ export namespace Picture {
             if (_request.url.indexOf("factor") != -1) {
                 _response.write("Pictured saved. Thank you for painting.");
                 storeOrder(url.query);
+                console.log(url.query);
             }
 
             if (_request.url.indexOf("get") != -1) {
